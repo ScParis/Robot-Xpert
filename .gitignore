@@ -4,6 +4,7 @@ bin-release/
 [Oo]bj/
 [Bb]in/
 log/*
+start/__pycache__/*
 # Other files and folders
 .settings/
 
