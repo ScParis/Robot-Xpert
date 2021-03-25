@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0 (Python 3.8.5 on linux)" generated="20210324 22:45:27.533" rpa="false" schemaversion="2">
+<suite id="s1" name="Loops" source="/media/scparis/BACKUP/Piperun/Q_A/Teste/Xpert/Robot-Xpert/start/loops.robot">
+<test id="s1-t1" name="Outro Loop">
+<kw name="Combine Lists" library="Collections">
+<var>${crossover}</var>
+<arg>${AVENGERS}</arg>
+<arg>${JUSTICE}</arg>
+<doc>Combines the given ``lists`` together and returns the result.</doc>
+<msg timestamp="20210324 22:45:27.557" level="INFO">${crossover} = ['Hulk', 'Thor', 'IronMan', 'CapitãoAmerica', 'Superman', 'Worder Woman', 'Batman', 'Arrow']</msg>
+<status status="PASS" starttime="20210324 22:45:27.557" endtime="20210324 22:45:27.557"/>
+</kw>
+<for flavor="IN">
+<var>${item}</var>
+<value>@{crossover}</value>
+<iter>
+<var name="${item}">Hulk</var>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>$item == 'Thor'</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20210324 22:45:27.558" endtime="20210324 22:45:27.561"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Obtendo o vingador: ${item}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210324 22:45:27.561" endtime="20210324 22:45:27.561"/>
+</kw>
+<status status="PASS" starttime="20210324 22:45:27.558" endtime="20210324 22:45:27.561"/>
+</iter>
+<iter>
+<var name="${item}">Thor</var>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>$item == 'Thor'</arg>
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<msg timestamp="20210324 22:45:27.562" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20210324 22:45:27.562" endtime="20210324 22:45:27.562"/>
+</kw>
+<status status="PASS" starttime="20210324 22:45:27.561" endtime="20210324 22:45:27.562"/>
+</iter>
+<status status="PASS" starttime="20210324 22:45:27.558" endtime="20210324 22:45:27.562"/>
+</for>
+<tag>Batman</tag>
+<status status="PASS" starttime="20210324 22:45:27.556" endtime="20210324 22:45:27.562"/>
+</test>
+<doc>Laços de repetição (Loops)</doc>
+<status status="PASS" starttime="20210324 22:45:27.534" endtime="20210324 22:45:27.563"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Batman</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Loops">Loops</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
