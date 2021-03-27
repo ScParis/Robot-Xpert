@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0 (Python 3.8.5 on linux)" generated="20210327 00:03:04.002" rpa="false" schemaversion="2">
+<suite id="s1" name="Login" source="/media/scparis/BACKUP/Piperun/Q_A/Teste/Xpert/Robot-Xpert/bodytest/tests/login.robot">
+<test id="s1-t1" name="Login com senha incorreta">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>True</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<msg timestamp="20210327 00:03:06.100" level="INFO">{"browser": "chromium", "headless": true, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0}</msg>
+<msg timestamp="20210327 00:03:06.249" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0}</msg>
+<status status="PASS" starttime="20210327 00:03:06.099" endtime="20210327 00:03:06.250"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>https://bodytest-web-scparis.herokuapp.com/dashboard</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<msg timestamp="20210327 00:03:08.663" level="INFO">Successfully initialized new page object and opened url: https://bodytest-web-scparis.herokuapp.com/dashboard</msg>
+<status status="PASS" starttime="20210327 00:03:06.251" endtime="20210327 00:03:08.663"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=email]</arg>
+<arg>admin@bodytest.com</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210327 00:03:08.664" level="INFO">Fills the text 'admin@bodytest.com' in the given field.</msg>
+<status status="PASS" starttime="20210327 00:03:08.664" endtime="20210327 00:03:08.760"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name=password]</arg>
+<arg>abc1212</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210327 00:03:08.761" level="INFO">Fills the text 'abc1212' in the given field.</msg>
+<status status="PASS" starttime="20210327 00:03:08.760" endtime="20210327 00:03:08.797"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>text=Entrar</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20210327 00:03:08.797" endtime="20210327 00:03:08.915"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=.Toastify__toast-body</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20210327 00:03:10.125" level="INFO">Wait for Element with selector: css=.Toastify__toast-body</msg>
+<status status="PASS" starttime="20210327 00:03:08.916" endtime="20210327 00:03:10.126"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=.Toastify__toast-body</arg>
+<arg>should be</arg>
+<arg>Usuário ou senha inválido</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<status status="PASS" starttime="20210327 00:03:10.126" endtime="20210327 00:03:10.183"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window and saves it to ``path``. Saves it as a png.</doc>
+<msg timestamp="20210327 00:03:10.605" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-12.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210327 00:03:10.183" endtime="20210327 00:03:10.605"/>
+</kw>
+<tag>temp</tag>
+<status status="PASS" starttime="20210327 00:03:06.095" endtime="20210327 00:03:10.606"/>
+</test>
+<doc>Suite de testes de Login do Administrador</doc>
+<status status="PASS" starttime="20210327 00:03:04.010" endtime="20210327 00:03:10.666"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">temp</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

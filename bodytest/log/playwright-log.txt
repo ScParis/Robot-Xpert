@@ -1,0 +1,11 @@
+{"level":30,"time":"2021-03-27T03:03:06.053Z","pid":282533,"hostname":"scherman-paris","msg":"Listening on 47843"}
+{"level":30,"time":"2021-03-27T03:03:06.274Z","pid":282533,"hostname":"scherman-paris","msg":"Changed active context"}
+{"level":30,"time":"2021-03-27T03:03:06.332Z","pid":282533,"hostname":"scherman-paris","msg":"Video path: undefined"}
+{"level":30,"time":"2021-03-27T03:03:06.332Z","pid":282533,"hostname":"scherman-paris","msg":"Changed active page"}
+{"level":30,"time":"2021-03-27T03:03:10.181Z","pid":282533,"hostname":"scherman-paris","msg":"Retrieved text for element css=.Toastify__toast-body containing Usuário ou senha inválido"}
+{"level":30,"time":"2021-03-27T03:03:10.617Z","pid":282533,"hostname":"scherman-paris","msg":"Changed active context"}
+{"level":30,"time":"2021-03-27T03:03:10.618Z","pid":282533,"hostname":"scherman-paris","msg":"Changing current active page"}
+{"level":30,"time":"2021-03-27T03:03:10.618Z","pid":282533,"hostname":"scherman-paris","msg":"Changed active page"}
+{"level":30,"time":"2021-03-27T03:03:10.646Z","pid":282533,"hostname":"scherman-paris","msg":"Changed active context"}
+{"level":30,"time":"2021-03-27T03:03:10.646Z","pid":282533,"hostname":"scherman-paris","msg":"Changing current active page"}
+{"level":30,"time":"2021-03-27T03:03:10.646Z","pid":282533,"hostname":"scherman-paris","msg":"Changed active page"}
