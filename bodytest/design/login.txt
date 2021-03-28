@@ -2,6 +2,8 @@
 
 Login do Adminstrador
 Login com senha incorreta
+Login com e-mail inválido
+
 Login com e-mail não cadastrado
 Login sem informar e-mail
 Login sem informar senha

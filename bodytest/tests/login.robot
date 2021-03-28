@@ -30,9 +30,28 @@ Login com senha incorreta
 
     Click               text=Entrar
 
-    Wait For Elements State         css=.Toastify__toast-body      visible      5
-    Get Text                        css=.Toastify__toast-body       should be        Usuário ou senha inválido
+    # Wait For Elements State         css=.Toastify__toast-body      visible      5
+    # Get Text                        css=.Toastify__toast-body       should be        Usuário ou senha inválido
+
+    Wait For Elements State         css=.Toastify__toast-body >> text=Usuário ou senha inválido          visible         5
 
     Take Screenshot
 
-#    
+Login com e-mail inválido
+
+    [tags]              temp2
+
+    New Browser         chromium    True
+    New Page            https://bodytest-web-scparis.herokuapp.com/dashboard
+
+    Fill Text           css=input[name=email]           admin$bodytest.com
+    Fill Text           css=input[name=password]        pwd123
+
+    Click               text=Entrar
+
+    # Wait For Elements State         css=.Toastify__toast-body      visible      5
+    # Get Text                        css=.Toastify__toast-body       should be        Usuário ou senha inválido
+
+    Wait For Elements State         css=form span >> text=Informe um e-mail válido          visible         5
+
+    Take Screenshot
