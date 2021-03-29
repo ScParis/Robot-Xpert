@@ -11,7 +11,7 @@ Login sem informar nenhum os campos
 Login com email estranho
 
 
-Daco que acesso a página de Login
+Dado que acesso a página de Login
 E preencho o campo email com "admin@bodytestcom"
 E preencho o campo senha com "pwd123"
 Quando clico em Entrar
