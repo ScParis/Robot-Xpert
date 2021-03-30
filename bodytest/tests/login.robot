@@ -2,6 +2,9 @@
 Documentation       Suite de testes de Login do Administrador
 
 Resource            ../resources/base.robot
+Suite Setup         Start Browser Session
+
+Test Teardown       Take Screenshot
 
 ***Test Cases***
 
@@ -9,96 +12,77 @@ Login do Adminstrador
 
     [tags]              admin
 
-    New Browser         chromium    False
-    New Page            https://bodytest-web-scparis.herokuapp.com/dashboard
+    Go To Login Page
+    Login With                      admin@bodytest.com          pwd123
 
-    Login With          admin@bodytest.com          pwd123
+    User Should Be Logged In        Administrador
 
-    Get Text            css=aside strong      should be   Administrador
-
-    Take Screenshot
+    [Teardown]                      Clear Local Storage & Take Screenshot
 
 Login com senha incorreta
 
     [tags]              temp
 
-    New Browser         chromium    False
-    New Page            https://bodytest-web-scparis.herokuapp.com/dashboard
- 
-    Login With          admin@bodytest.com          acd159
+    Go To Login Page 
+    Login With                      admin@bodytest.com          acd159
 
-    Wait For Elements State         css=.Toastify__toast-body >> text=Usuário ou senha inválido          visible         5
+    Toaster Text Should Be          Usuário e/ou senha inválido
 
-    Take Screenshot
+    [Teardown]                      Thinking & Take Screenshot      2
+
+Login com email não cadastrado
+
+    [tags]              temp
+
+    Go To Login Page 
+    Login With                      user@bodytest.com          pwd123
+
+    Toaster Text Should Be          Usuário e/ou senha inválido
+
+    [Teardown]                      Thinking & Take Screenshot      2
 
 Login com e-mail inválido
 
     [tags]              temp
 
-    New Browser         chromium    False
-    New Page            https://bodytest-web-scparis.herokuapp.com/dashboard
+    Go To Login Page
+    Login With                      admin#bodytest.com          pwd123
 
-    Login With          admin#bodytest.com          pwd123
-
-    Wait For Elements State         css=form span >> text=Informe um e-mail válido          visible         5
-
-    Take Screenshot
+    Alert Text Should Be            Informe um e-mail válido
 
 Login com campo senha vazio
 
     [tags]              temp
 
-    New Browser         chromium    False
-    New Page            https://bodytest-web-scparis.herokuapp.com/dashboard
+    Go To Login Page
+    Login With                      admin@bodytest.com          ${EMPTY}
 
-    Login With          admin@bodytest.com          ${EMPTY}
-
-
-    Wait For Elements State         css=form span >> text=A senha é obrigatória          visible         5
-
-    Take Screenshot
+    Alert Text Should Be            A senha é obrigatória
 
 Login com campo email vazio
 
     [tags]              temp
 
-    New Browser         chromium    False
-    New Page            https://bodytest-web-scparis.herokuapp.com/dashboard
+    Go To Login Page
+    Login With                      ${EMPTY}          pwd123
 
-    Login With          ${EMPTY}          pwd123
-
-
-    Wait For Elements State         css=form span >> text=O e-mail é obrigatório          visible         5
-
-    Take Screenshot
-
+    Alert Text Should Be            O e-mail é obrigatório
 
 Login sem informar nenhum os campos
 
     [tags]              temp
 
-    New Browser         chromium    False
-    New Page            https://bodytest-web-scparis.herokuapp.com/dashboard
+    Go To Login Page
+    Login With                      ${EMPTY}                ${EMPTY}
 
-
-    Login With          ${EMPTY}                ${EMPTY}
-
-
-    Wait For Elements State         css=form span >> text=O e-mail é obrigatório          visible         5
-    Wait For Elements State         css=form span >> text=A senha é obrigatória          visible         5
-
-    Take Screenshot
+    Alert Text Should Be            O e-mail é obrigatório
+    Alert Text Should Be            A senha é obrigatória
 
 Login com email estranho
 
     [tags]              temp
 
-    New Browser         chromium    False
-    New Page            https://bodytest-web-scparis.herokuapp.com/dashboard
+    Go To Login Page
+    Login With                      strangeemailhere                pwd123
 
-    Login With          strangeemailhere                pwd123
-
-
-    Wait For Elements State         css=form span >> text=Informe um e-mail válido          visible         5
-
-    Take Screenshot
+    Alert Text Should Be            Informe um e-mail válido

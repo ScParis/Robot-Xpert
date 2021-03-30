@@ -3,6 +3,8 @@ Documentation     Ações de autorização
 
 
 ***Keywords***
+Go To Login Page
+    Go To               https://bodytest-web-scparis.herokuapp.com/dashboard 
 
 Login With
 
@@ -12,3 +14,16 @@ Login With
     Fill Text           css=input[placeholder*=senha]        ${pass}
 
     Click               text=Entrar
+
+Logout Session
+    Click               xpath=//span[contains(text(), "Sair")]
+
+Toaster Text Should Be
+    [Arguments]                     ${expect_text}
+
+    Wait For Elements State         css=.Toastify__toast-body >> text=${expect_text}          visible         5
+
+Alert Text Should Be
+    [Arguments]                     ${expect_text}
+
+    Wait For Elements State         css=form span >> text=${expect_text}          visible         5
