@@ -2,24 +2,20 @@
 Documentation       Cadastro de alunos
 
 Resource            ../resources/base.robot
-Suite Setup         Start Browser Session
+Suite Setup         Start Admin Session
 
-Test Teardown       Take Screenshot
 
 **Test Cases***
 Cadastro de alunos
 
+    Remove Student              aluno3@teste.com
 #Pré-condição do teste (estar logado no sistema)
-
-    Go To Login Page
-    Login With                      admin@bodytest.com          pwd123
-
-    User Should Be Logged In        Administrador
 
     Go To Students Management
 
 # Ação do cenário
 
+    Go To Form Student
     New Student      Aluno3 Teste    aluno3@teste.com    19  92  1.72
     
 # Validação 

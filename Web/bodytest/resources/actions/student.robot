@@ -3,10 +3,8 @@ Documentation               Arquivo para implementação das funcionalidades do 
 
 
 ***Keywords***
-Go To Students Management
-    Click                           css=a[href$=alunos]
-    Wait For Elements State         xpath=//h1["Gestão de Alunos"]      visible      5
 
+Go To Form Student
     Click                           css=a[href$="alunos/new"]
     Wait For Elements State         xpath=//h1["Novo aluno"]      visible      5
 
