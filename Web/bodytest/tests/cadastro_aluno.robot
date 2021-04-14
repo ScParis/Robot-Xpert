@@ -16,9 +16,14 @@ Cadastro de alunos
 
     User Should Be Logged In        Administrador
 
-    Click                           css=a[href$=alunos]
-    Wait For Elements State         xpath=//h1["Gestão de Alunos"]      visible      5
+    Go To Students Management
 
-    Click                           css=a[href$="alunos/new"]
-    Wait For Elements State         xpath=//h1["Novo aluno"]      visible      5
+# Ação do cenário
 
+    New Student      Aluno3 Teste    aluno3@teste.com    19  92  1.72
+    
+# Validação 
+
+    Toaster Text Should Be          Aluno cadastrado com sucesso
+
+    [Teardown]                      Thinking & Take Screenshot      2

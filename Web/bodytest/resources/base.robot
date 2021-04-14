@@ -6,6 +6,7 @@ Library                 Browser
 
 Resource                actions/auth.robot
 Resource                actions/nav.robot
+Resource                actions/student.robot
 
 ***Keywords***
 Start Browser Session
