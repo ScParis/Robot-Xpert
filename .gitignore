@@ -3,3 +3,4 @@ logs/*
 start/app/__pycache__/*
 
 Web/log/*
+Web/bodytest/resources/libs/__pycache__/*

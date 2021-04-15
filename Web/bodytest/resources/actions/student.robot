@@ -9,12 +9,12 @@ Go To Form Student
     Wait For Elements State         xpath=//h1["Novo aluno"]      visible      5
 
 New Student
-    [Arguments]         ${name}     ${email}     ${age}      ${weight}       ${feet_tall}
+    [Arguments]         &{student}
 
-    Fill Text                       xpath=//input[@id="name"]           ${name}
-    Fill Text                       xpath=//input[@id="email"]          ${email}
-    Fill Text                       xpath=//input[@id="age"]            ${age}
-    Fill Text                       xpath=//input[@id="weight"]         ${weight}
-    Fill Text                       xpath=//input[@id="feet_tall"]      ${feet_tall}
+    Fill Text           xpath=//input[@id="name"]           ${student.name}
+    Fill Text           xpath=//input[@id="email"]          ${student.email}
+    Fill Text           xpath=//input[@id="age"]            ${student.age}
+    Fill Text           xpath=//input[@id="weight"]         ${student.weight}
+    Fill Text           xpath=//input[@id="feet_tall"]      ${student.feet_tall}
 
-    Click                           xpath=//button[contains(text(), "Salvar")]
+    Click               xpath=//button[contains(text(), "Salvar")]
