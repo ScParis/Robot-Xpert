@@ -4,3 +4,5 @@ start/app/__pycache__/*
 
 Web/log/*
 Web/bodytest/resources/libs/__pycache__/*
+.mypy_cache/*
+package-lock.json
