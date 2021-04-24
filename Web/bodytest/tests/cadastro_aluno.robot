@@ -2,6 +2,7 @@
 Documentation       Cadastro de alunos
 
 Resource            ../resources/base.robot
+
 Suite Setup         Start Admin Session
 
 
@@ -27,20 +28,15 @@ Novo aluno
 Não Deve Permitir Cadastro De Email Duplicado
     [tags]          dup
 
-
     &{student}      Create Dictionary   name=João Teste    email=joao@teste.com   age=18  weight=62   feet_tall=1.52
 
-    Inserir Student                 ${student}
-
+    Insert Student                 ${student}
 # Teste de duplicaidade
 #Pré-condição do teste (estar logado no sistema)
     Go To Students Management
-
-# Ação do cenário
-    Go To Form Student
-    New Student                     ${student}
+    Go To Form Student                                                          # Ação do cenário
+    New Student                     &{student}
     
-# Validação 
-    Toaster Text Should Be          Email já existe no sistema.
+    Toaster Text Should Be          Email já existe no sistema.                 # Validação 
 
     [Teardown]                      Thinking & Take Screenshot      2
