@@ -21,8 +21,3 @@ Logout Session
 
     Click               xpath=//span[contains(text(), "Sair")]
 
-Alert Text Should Be
-
-    [Arguments]                     ${expect_text}
-
-    Wait For Elements State         css=form span >> text=${expect_text}          visible         5
