@@ -4,11 +4,11 @@ Documentation       Cadastro de alunos
 Resource            ../resources/base.robot
 
 Suite Setup         Start Admin Session
+Test Teardown       Take Screenshot
 
-Library             Collections
 
 ***Test Cases***
-New Student
+Scenario: New Student
 
     &{student}      Create Dictionary   name=Aluno Teste    email=aluno@teste.com   age=38  weight=92   feet_tall=1.72
 
@@ -26,7 +26,7 @@ New Student
 
     [Teardown]                      Thinking & Take Screenshot      2
 
-Must Not Allow Duplicate Email Registration
+Scenario: Must Not Allow Duplicate Email Registration
     [tags]          dup
 
     &{student}      Create Dictionary   name=João Teste    email=joao@teste.com   age=18  weight=62   feet_tall=1.52
@@ -42,7 +42,7 @@ Must Not Allow Duplicate Email Registration
 
     [Teardown]                      Thinking & Take Screenshot      2
 
-All Fields Must Be Mandatory 
+Scenario: All Fields Must Be Mandatory 
 
     @{expected_alerts}      Set Variable       Nome é obrigatório      O e-mail é obrigatório      idade é obrigatória     o peso é obrigatório        a Altura é obrigatória
     ${got_aperts}           Create List
@@ -63,7 +63,7 @@ All Fields Must Be Mandatory
 
     Lists Should Be Equal          ${expected_alerts}           ${got_aperts} 
 
-Validate Numbert type
+Scenario: Validate Numbert type
 
     [tags]          temp
     
@@ -73,12 +73,24 @@ Validate Numbert type
     ${WEIGHT_FIELD}         number
     ${EET_TALL_FEILD}       number
 
-Validate Email Type
+Scenario: Validate Email Type
     
     [tags]          temp
     
     [Template]      Check Type Field On Sudent Form
     ${EMAIL_FIELD}          email
+
+Scenario: Under 14 years old cannot register
+    
+    &{student}      Create Dictionary   name=Alana Emilly Pires    email=aalanaemillypires@indaiamidias.com.br   age=13  weight=55   feet_tall=1.62
+
+    Go To Students Management
+    Go To Form Student                                                          # Ação do cenário
+    New Student                     &{student}
+
+    Alert Text Should Be            A idade deve ser maior ou igual 14 anos
+
+
 
 ***Keywords***
 

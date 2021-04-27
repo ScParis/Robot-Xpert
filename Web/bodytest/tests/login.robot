@@ -8,7 +8,7 @@ Test Teardown       Take Screenshot
 
 ***Test Cases***
 
-Login do Adminstrador
+Scenario: Administrator login
 
     [tags]              admin
 
@@ -19,7 +19,7 @@ Login do Adminstrador
 
     [Teardown]                      Clear Local Storage & Take Screenshot
 
-Login com senha incorreta
+Scenario: Login with incorrect password
 
     [tags]              temp
 
@@ -30,7 +30,7 @@ Login com senha incorreta
 
     [Teardown]                      Thinking & Take Screenshot      2
 
-Login com email não cadastrado
+Scenario: Login with unregistered email
 
     [tags]              temp
 
@@ -41,7 +41,7 @@ Login com email não cadastrado
 
     [Teardown]                      Thinking & Take Screenshot      2
 
-Login com e-mail inválido
+Scenario: Login with invalid email
 
     [tags]              temp
 
@@ -50,7 +50,7 @@ Login com e-mail inválido
 
     Alert Text Should Be            Informe um e-mail válido
 
-Login com campo senha vazio
+Scenario: Login with empty password field
 
     [tags]              temp
 
@@ -59,7 +59,7 @@ Login com campo senha vazio
 
     Alert Text Should Be            A senha é obrigatória
 
-Login com campo email vazio
+Scenario: Login with empty email field
 
     [tags]              temp
 
@@ -68,7 +68,7 @@ Login com campo email vazio
 
     Alert Text Should Be            O e-mail é obrigatório
 
-Login sem informar nenhum os campos
+Scenario: Login without informing any fields
 
     [tags]              temp
 
@@ -78,7 +78,7 @@ Login sem informar nenhum os campos
     Alert Text Should Be            O e-mail é obrigatório
     Alert Text Should Be            A senha é obrigatória
 
-Login com email estranho
+Scenario: Login with strange email
 
     [tags]              temp
 
