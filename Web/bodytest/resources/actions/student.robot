@@ -29,3 +29,43 @@ New Student
     Fill Text           ${EET_TALL_FEILD}      ${student.feet_tall}
 
     Submit Student Form
+
+Request Removal by Email
+
+    [Arguments]         ${email}
+
+    Click               xpath=//td[contains(text(), "${email}")]/../td/button[@id="trash"]
+
+Confirm Removal
+
+    Click               text=SIM, pode apagar!
+
+Cancel Removal
+
+    Click               text=NÃO
+
+
+Student Should Not Be Visible
+
+    [Arguments]                 ${email}
+
+    Wait For Elements State         xpath=//td[contains(text(), "${email}")]        detached            5
+
+Student Should Be Visible
+
+    [Arguments]                 ${email}
+
+    Wait For Elements State         xpath=//td[contains(text(), "${email}")]        visible            5
+
+Search Student By Name
+
+    [Arguments]                 ${name}
+
+    Fill Text                   css=input[placeholder="Buscar aluno"]               ${name}
+
+Student Name Should Be Visible
+
+    [Arguments]                     ${name}
+
+    Wait For Elements State         css=table tbody tr >> text=${name}          visible         5
+

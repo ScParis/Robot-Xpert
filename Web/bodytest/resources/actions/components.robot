@@ -27,3 +27,16 @@ Field Should Be Type
 
     ${attr}        Get Attribute            ${element}      type
     Should Be Equal         ${attr}         ${type}
+
+Register Should Not Be Found
+
+    Wait For Elements State                 css=div >> text=Nenhum registro encontrado.         visible         5
+    Wait For Elements State                 css=table           detached                5
+
+Total Itens Should Be
+    [Arguments]                     ${number}
+
+    ${element}                      Set Variable                    css=#pagination .total                   
+
+    Wait For Elements State         ${element}          visible         5
+    Get Text                        ${element}          ==              Total: ${number}

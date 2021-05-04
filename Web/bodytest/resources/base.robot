@@ -3,7 +3,7 @@
 Documentation           Tudo começa aqui, mwu arquivo base do projeto de automação
 
 Library                 Browser
-
+Library                 OperatingSystem
 Library                 Collections
 
 Library                 libs/DeloreanLibrary.py
@@ -35,3 +35,15 @@ Thinking & Take Screenshot
 
     Sleep               ${timeout}
     Take Screenshot
+
+
+### Helpers
+
+Get Json
+
+    [Arguments]         ${file_name}
+
+    ${file}=            Get File            Web/bodytest/resources/fixtures/${file_name}
+    ${json_object}      Evaluate            json.loads($file)           json
+
+    [return]            ${json_object}
