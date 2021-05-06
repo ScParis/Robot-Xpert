@@ -9,6 +9,7 @@ Library                 Collections
 Library                 libs/DeloreanLibrary.py
 
 Resource                actions/auth.robot
+Resource                actions/plans.robot
 Resource                actions/student.robot
 
 Resource                actions/nav.robot

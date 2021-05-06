@@ -1,0 +1,21 @@
+{
+    "word": "Gold",
+    "total": 3,
+    "plans": [
+        {
+            "title": "Plano Gold Anual",
+            "duration": "12",
+            "price": 120.00
+        },
+        {
+            "title": "Plano Gold Semestral",
+            "duration": "6",
+            "price": 60.00
+        },
+        {
+            "title": "Plano Gold Trimestral",
+            "duration": "3",
+            "price": 30.00
+        }
+    ]
+}

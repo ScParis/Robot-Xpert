@@ -1,5 +1,6 @@
-Documentation       Cadastro de alunos
 ***Settings***
+Documentation       Pesquisa de alunos
+
 
 #Resource            ${EXECDIR}/resources/base.robot
 Resource            ../../resources/base.robot
@@ -12,6 +13,8 @@ Test Teardown       Take Screenshot
 
 ***Test Cases***
 Scenario: Exact search
+
+    [tags]          exact
 
     &{student}      Create Dictionary   name=Theo Moura    email=theomoura@sites.com.br	   age=57  weight=92   feet_tall=1.92
 
@@ -38,12 +41,12 @@ Scenario: Search for students by single term
     ${fixture}          Get Json            students-search.json
     ${students}         Set Variable        ${fixture['students']}
     ${word}             Set Variable        ${fixture['word']}
-    ${total}             Set Variable        ${fixture['total']}
+    ${total}            Set Variable        ${fixture['total']}
 
     Remove Student By Name           ${word}
 
 
-    FOR     ${item}     IN          @{students}
+    FOR     ${item}     IN              @{students}
 
             Insert Student          ${item}
 

@@ -34,7 +34,6 @@ Scenery: Must Not Allow Duplicate Email Registration
 
     Insert Student                 ${student}
 
-#    Log To Console                  ${student}
 # Teste de duplicaidade
 #Pré-condição do teste (estar logado no sistema)
     Go To Students Management
@@ -74,7 +73,7 @@ Scenery: Validate Numbert type
     
     ${AGE_FIELD}            number
     ${WEIGHT_FIELD}         number
-    ${EET_TALL_FEILD}       number
+    ${FEET_TALL_FEILD}      number
 
 Scenery: Validate Email Type
     
@@ -94,7 +93,6 @@ Scenery: Under 14 years old cannot register
     Alert Text Should Be            A idade deve ser maior ou igual 14 anos
 
 
-
 ***Keywords***
 
 Check Type Field On Sudent Form
@@ -105,4 +103,3 @@ Check Type Field On Sudent Form
     Go To Form Student
 
     Field Should Be Type              ${element}          ${type}
-

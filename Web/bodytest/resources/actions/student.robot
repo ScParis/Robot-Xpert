@@ -7,7 +7,7 @@ ${NAME_FIELD}               xpath=//input[@id="name"]
 ${EMAIL_FIELD}              xpath=//input[@id="email"]    
 ${AGE_FIELD}                xpath=//input[@id="age"]      
 ${WEIGHT_FIELD}             xpath=//input[@id="weight"]   
-${EET_TALL_FEILD}           xpath=//input[@id="feet_tall"]
+${FEET_TALL_FEILD}          xpath=//input[@id="feet_tall"]
 
 
 ***Keywords***
@@ -26,7 +26,7 @@ New Student
     Fill Text           ${EMAIL_FIELD}         ${student.email}
     Fill Text           ${AGE_FIELD}           ${student.age}
     Fill Text           ${WEIGHT_FIELD}        ${student.weight}
-    Fill Text           ${EET_TALL_FEILD}      ${student.feet_tall}
+    Fill Text           ${FEET_TALL_FEILD}     ${student.feet_tall}
 
     Submit Student Form
 
@@ -69,3 +69,21 @@ Student Name Should Be Visible
 
     Wait For Elements State         css=table tbody tr >> text=${name}          visible         5
 
+Go To Student Update Form
+
+    [Arguments]         ${email}
+
+    Click                               xpath=//td[contains(text(), "${email}")]/..//a[@class="edit"]
+    Wait For Elements State             css=h1 >> text=Edição de aluno          visible         5
+
+Update A Student
+
+    [Arguments]         ${student}
+
+    Fill Text           ${NAME_FIELD}               ${student['name']}
+    Fill Text           ${EMAIL_FIELD}              ${student['email']}
+    Fill Text           ${AGE_FIELD}                ${student['age']}
+    Fill Text           ${WEIGHT_FIELD}             ${student['weight']}
+    Fill Text           ${FEET_TALL_FEILD}          ${student['feet_tall']}
+
+    Submit Student Form

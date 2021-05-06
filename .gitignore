@@ -6,3 +6,6 @@ Web/log/*
 Web/bodytest/resources/libs/__pycache__/*
 .mypy_cache/*
 package-lock.json
+backup/
+
+Web/bodytest/resources/libs/__pycache__/
