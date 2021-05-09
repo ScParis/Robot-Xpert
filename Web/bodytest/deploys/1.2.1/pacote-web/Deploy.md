@@ -6,4 +6,4 @@
 4) Entrar na pasta Web pelo terminal
 5) Adicionar, comitar e publicar as alterações
 
-API Produção = https://bodytest-api.herokuapp.com
+API Produção = https://bodytest-api-scparis.herokuapp.com

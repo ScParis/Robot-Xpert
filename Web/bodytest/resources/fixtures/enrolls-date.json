@@ -1,0 +1,15 @@
+{
+    "student": {
+        "name": "Jéssica Liz Aragão",
+        "email": "jessicalizaragao@gmail.com",
+        "age": 32,
+        "weight": 90,
+        "feet_tall": 1.75
+    },
+    "plan": {
+        "title": "Plano Fit 2.0",
+        "duration": "12",
+        "price": 79.90
+    },
+    "days": 365
+}

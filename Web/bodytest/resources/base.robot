@@ -5,10 +5,12 @@ Documentation           Tudo começa aqui, mwu arquivo base do projeto de automa
 Library                 Browser
 Library                 OperatingSystem
 Library                 Collections
+Library                 DateTime
 
 Library                 libs/DeloreanLibrary.py
 
 Resource                actions/auth.robot
+Resource                actions/enrollments.robot
 Resource                actions/plans.robot
 Resource                actions/student.robot
 

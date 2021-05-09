@@ -106,3 +106,34 @@ Scenario: Validate Duration Less Then 1 Month
     Alert Text Should Be        A duração dever ser no mínimo 1 mês
 
     [Teardown]                      Thinking & Take Screenshot      2
+
+Scenario: Validate Duration More Then 60 Month
+
+    [tags]          more
+
+    &{plan}         Create Dictionary           title=Plano Dur +60           duration=61         price=19,99     total_price=R$ 239,88
+
+    Go To Plans Management
+    Go To Form Plans
+    Fill Plan Form              ${plan}
+
+    Submit Plan Form
+       
+    Alert Text Should Be        A duração dever ser no máximo 60 meses
+
+    [Teardown]                      Thinking & Take Screenshot      2    
+
+Scenary: Fill Price With Max Value
+
+    [tags]          max
+
+    &{plan}         Create Dictionary           title=Plano Gold           duration=36         price=12212121000000000000000,00         total_price=R$ 439636356000000000000000,00
+
+    Go To Plans Management
+    Go To Form Plans
+    
+    Fill Plan Form                  ${plan}
+    Submit Plan Form
+
+    Toaster Text Should Be          Plano cadastrado com sucesso
+    [Teardown]                      Thinking & Take Screenshot      2

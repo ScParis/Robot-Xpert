@@ -1,6 +1,7 @@
 log/*
 logs/*
 start/app/__pycache__/*
+Web/bodytest/deploys/*
 
 Web/log/*
 Web/bodytest/resources/libs/__pycache__/*
