@@ -52,9 +52,13 @@ jobs:
           robot -d ./log Web/bodytest/tests/
      #     robot -d ./log -v headless:true -v browser:chromium Web/bodytest/tests/
      
-      - name: Upload logs
-        uses: actions/upload-artifact@v2
-        with:
-            name: logs
-            path: log/*
+#       - name: Upload logs
+#         uses: actions/upload-artifact@v2
+#         with:
+#             name: logs
+#             path: log/*
             
+      - name: Upload a Build Artifact ogs
+        uses: actions/upload-artifact@v2.2.3
+        with:
+          path: log/
