@@ -38,6 +38,7 @@ jobs:
   robot-init:
     name: Robot init
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: Run Robot Init
         run: |
