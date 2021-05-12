@@ -46,10 +46,13 @@ jobs:
       - name: Run install python
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          
       - name: Run init Robot
         run: |
+          pip install -r requirements.txt
           rfbrowser init
       - name: Run Command Test With Robot
         run: |
-          robot -d ./log -v headless:true -v browser:chromium Web/bodytest/tests/
+          robot -d ./log Web/bodytest/tests/
+     #     robot -d ./log -v headless:true -v browser:chromium Web/bodytest/tests/
+            
