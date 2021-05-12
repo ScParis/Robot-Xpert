@@ -34,7 +34,11 @@ jobs:
           python -m pip install --upgrade pip
       - name: Run Install Requirements & Init Robot
         run: |
-          pip install -r requirements.txt    
+          pip install -r requirements.txt
+  robot-init:
+    name: Robot init
+    runs-on: ubuntu-latest
+    steps:
       - name: Run Robot Init
         run: |
           rfbrowser init
