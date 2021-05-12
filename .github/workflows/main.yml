@@ -48,4 +48,4 @@ jobs:
           rfbrowser init
       - name: Run Command Test Whit Robot
         run: |
-          robot -d ./logs -x output-xunit.xml -v headless:true -v browser:chromium tests\
+          robot -d ./log -v headless:true -v browser:chromium tests\
