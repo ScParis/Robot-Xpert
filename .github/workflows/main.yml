@@ -16,6 +16,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    name: Build
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -24,6 +25,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+  deploy:
+    name: Deploy
+    runs-on: self-hosted
+    needs: build
+    steps:
     # Runs prepare machine  
       - name: Run a node install
         run: |
@@ -40,7 +46,11 @@ jobs:
       - name: Run Robot Init
         run: |
           rfbrowser init
-          
+  validate:
+    name: Run Test
+    runs-on: self-hosted
+    needs: deploy
+    steps:
       - name: Run Robot Test
         run: |
           robot -d ./log Web/bodytest/tests/
