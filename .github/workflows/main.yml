@@ -39,3 +39,13 @@ jobs:
           curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
           sudo apt-get install -y nodejs
           sudo apt-get install -y xvfb ca-certificates net-tools netcat gnupg ffmpeg libgtk-3-0 libgdk-pixbuf2.0-dev libxcomposite-dev libdbus-glib-1-2 libatk-bridge2.0-0 wget libgbm1 libnss3 libxss1 libasound2
+      - name: Run install python
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run init Robot
+        run: |
+          rfbrowser init
+      - name: Run Command Test Whit Robot
+        run: |
+          robot -d ./logs -x output-xunit.xml -v headless:true -v browser:chromium tests\
