@@ -50,6 +50,6 @@ jobs:
       - name: Run init Robot
         run: |
           rfbrowser init
-      - name: Run Command Test Whit Robot
+      - name: Run Command Test With Robot
         run: |
-          robot -d ./log -v headless:true -v browser:chromium Web\bodytest\tests\tests\
+          robot -d ./log -v headless:true -v browser:chromium Web/bodytest/tests/
