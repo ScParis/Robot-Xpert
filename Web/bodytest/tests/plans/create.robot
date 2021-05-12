@@ -123,17 +123,17 @@ Scenario: Validate Duration More Then 60 Month
 
     [Teardown]                      Thinking & Take Screenshot      2    
 
-Scenary: Fill Price With Max Value
+# Scenary: Fill Price With Max Value
 
-    [tags]          max
+#     [tags]          max
 
-    &{plan}         Create Dictionary           title=Plano Gold           duration=36         price=12212121000000000000000,00         total_price=R$ 439636356000000000000000,00
+#     &{plan}         Create Dictionary           title=Plano Gold           duration=36         price=12212121000000000000000,00         total_price=R$ 439636356000000000000000,00
 
-    Go To Plans Management
-    Go To Form Plans
+#     Go To Plans Management
+#     Go To Form Plans
     
-    Fill Plan Form                  ${plan}
-    Submit Plan Form
+#     Fill Plan Form                  ${plan}
+#     Submit Plan Form
 
-    Toaster Text Should Be          Plano cadastrado com sucesso
-    [Teardown]                      Thinking & Take Screenshot      2
+#     Toaster Text Should Be          Plano cadastrado com sucesso
+#     [Teardown]                      Thinking & Take Screenshot      2

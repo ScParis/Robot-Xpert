@@ -1,13 +1,13 @@
 {
     "student": {
-        "name": "Marcos Miguel Sérgio Dias",
-        "email": "msdias@gmail.com.br",
-        "age": 22,
-        "weight": 85,
-        "feet_tall": 1.95
+        "name": "Juh Andrade",
+        "email": "juhandreade@gmail.com",
+        "age": 32,
+        "weight": 65,
+        "feet_tall": 1.59
     },
     "plan": {
-        "title": "Plano Top100",
+        "title": "Plano 60",
         "duration": "6",
         "price": 99.90
     },
