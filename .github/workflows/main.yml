@@ -55,4 +55,10 @@ jobs:
         run: |
           robot -d ./log Web/bodytest/tests/
      #     robot -d ./log -v headless:true -v browser:chromium Web/bodytest/tests/
+     
+      - name: Upload math result for job 1
+        uses: actions/upload-artifact@v2
+        with:
+            name: logs
+            path: log/*
             
