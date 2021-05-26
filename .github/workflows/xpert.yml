@@ -23,6 +23,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - name: Coveralls GitHub Action
+        uses: coverallsapp/github-action@v1.1.2
     # Runs prepare machine  
       - name: Run a node install
         run: |
@@ -52,3 +54,5 @@ jobs:
         with:
           name: Robot Logs 
           path: log/
+
+
