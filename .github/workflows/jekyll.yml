@@ -5,7 +5,7 @@ on:
     branches: [ master-xpert ]
   pull_request:
     branches: [ master-xpert ]
-
+  workflow_dispatch:
 jobs:
   robot_test:
     runs-on: ubuntu-latest
