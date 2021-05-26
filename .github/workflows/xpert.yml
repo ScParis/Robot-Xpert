@@ -25,10 +25,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+#       - name: Coveralls
+#         uses: coverallsapp/github-action@master
+#         with:
+#           github-token: ${{ secrets.GITHUB_TOKEN }}
 
     # Runs prepare machine  
       - name: Run a node install
