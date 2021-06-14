@@ -9,4 +9,4 @@ Web/bodytest/resources/libs/__pycache__/*
 package-lock.json
 backup/
 
-Web/bodytest/resources/libs/__pycache__/
+Web/bodytest/resources/libs/__pycache__/*
